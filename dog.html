@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>superDoggo</title>
+</head>
+<body>
+<img id="my-image"/>
+<script>
+    let myImage = document.querySelector('#my-image');
+    fetch('https://dog.ceo/api/breed/shiba/images/random').then(function(response) {
+        return response.json();
+    }).then(function(obj) {
+        console.log(obj);
+        myImage.src = obj.message;
+    }).catch(function (error) {
+        console.log(error.message);
+    })
+</script>
+</body>
+</html>
